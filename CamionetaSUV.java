@@ -3,14 +3,7 @@ public class CamionetaSUV extends vehiculo {
     private float capacidadMaletero;
     public CamionetaSUV() {
     }
-    public CamionetaSUV(
-            String traccion,
-            float capacidadMaletero,
-            String placa,
-            String marca,
-            int modelo,
-            float precioDiario,
-            String estado) {
+    public CamionetaSUV(String traccion, float capacidadMaletero, String placa, String marca, int modelo, float precioDiario, String estado) {
         super(placa,marca,modelo,precioDiario,estado);
         this.traccion = traccion;
         this.capacidadMaletero = capacidadMaletero;
