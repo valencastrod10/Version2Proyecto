@@ -1,11 +1,9 @@
-public class vehiculo{
-    
+public class vehiculo{    
     private String placa;
     private String marca;
     private int modelo;
     private float precioDiario;
     private String estado;
-
     public vehiculo() {
     }
     public vehiculo(String placa, String marca, int modelo, float precioDiario, String estado) {

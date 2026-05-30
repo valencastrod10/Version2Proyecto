@@ -5,15 +5,10 @@ public class ContratoRenting {
     private String FechaInicio;
     private String FechaFin;
     private int TotalDias;
-    private float ValorTotal;
-
-   
+    private float ValorTotal;   
     public ContratoRenting() {
-    }
-
-    
-    public ContratoRenting(String idContrato, String cedulaCliente, String placaVehiculo, String fechaInicio,
-            String fechaFin, int totalDias, float valorTotal) {
+    }    
+    public ContratoRenting(String idContrato, String cedulaCliente, String placaVehiculo, String fechaInicio,String fechaFin, int totalDias, float valorTotal) {
         IdContrato = idContrato;
         CedulaCliente = cedulaCliente;
         PlacaVehiculo = placaVehiculo;
@@ -22,8 +17,6 @@ public class ContratoRenting {
         TotalDias = totalDias;
         ValorTotal = valorTotal;
     }
-
-
     public String getIdContrato() {
         return IdContrato;
     }
@@ -65,7 +58,5 @@ public class ContratoRenting {
     }
     public void setValorTotal(float valorTotal) {
         ValorTotal = valorTotal;
-    }
-
-    
+    }    
 }
