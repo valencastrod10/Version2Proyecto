@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class Validaciones {
@@ -119,5 +122,67 @@ public class Validaciones {
         System.out.println("Traccion invalida");
         return validarTraccion(sc);
     }
+     public String validarIdContrato(Scanner sc) {
+
+        String id = sc.next();
+
+        if (id.matches("[a-zA-Z0-9]+")) {
+
+            return id;
+        }
+
+        System.out.println(
+                "El ID solo puede contener letras y numeros");
+
+        return validarIdContrato(sc);
+    }
+    
+public String validarFecha(Scanner sc) {
+
+        String fecha = sc.next();
+
+        while (!esFechaValida(fecha, "dd/MM/yyyy")) {
+
+            System.out.println(
+                    "Fecha invalida. Ingrese la fecha en formato dd/MM/yyyy");
+
+            fecha = sc.next();
+        }
+
+        return fecha;
+    }
+
+    public boolean esFechaValida(
+            String fecha,
+            String formato) {
+
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern(formato);
+
+        try {
+
+            LocalDate.parse(fecha, formatter);
+
+            return true;
+
+        } catch (DateTimeParseException e) {
+
+            return false;
+        }
+    }
+public String validarLicencia(Scanner sc) {
+
+    String licencia = sc.next();
+
+    if (licencia.matches("[a-zA-Z0-9]+")) {
+
+        return licencia.toUpperCase();
+    }
+
+    System.out.println(
+            "La licencia solo puede contener letras y numeros");
+
+    return validarLicencia(sc);
+}
 
 }

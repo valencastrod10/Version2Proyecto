@@ -26,7 +26,6 @@ public class Principal {
                         System.out.println("4. Buscar cliente");
                         System.out.println("5. Volver al menu principal");
                         int opCliente = sc.nextInt();
-
                         switch (opCliente) {
                             case 1:
                                 System.out.println("Pagina en mantenimiento");
@@ -56,7 +55,6 @@ public class Principal {
                         System.out.println("3. Eliminar vehiculo");
                         System.out.println("4. Buscar vehiculo");
                         System.out.println("5. Volver al menu principal");
-
                         int opVehiculo = sc.nextInt();
                         switch (opVehiculo) {
                             case 1:
