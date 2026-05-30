@@ -62,23 +62,40 @@ public class Validaciones {
         return cedula;
     }
 
-    public String validarTelefono(Scanner sc) {
-        String telefono = sc.next();
-        if (telefono.matches("[0-9]+")) {
-            return telefono;
-        }
-        System.out.println("Telefono invalido");
+public String validarTelefono(Scanner sc) {
+
+    String telefono = sc.next();
+
+    if (!telefono.matches("[0-9]+")) {
+
+        System.out.println( "Solo se permiten numeros");
+
         return validarTelefono(sc);
     }
 
-    public String validarPlaca(Scanner sc) {
-        String placa = sc.next();
-        if (placa.matches("[a-zA-Z0-9]+")) {
-            return placa.toUpperCase();
-        }
-        System.out.println("Placa invalida");
-        return validarPlaca(sc);
+    if (telefono.length() != 10) {
+
+        System.out.println(
+                "El telefono debe tener 10 digitos");
+
+        return validarTelefono(sc);
     }
+
+    return telefono;
+}
+
+public String validarPlaca(Scanner sc) {
+
+    String placa = sc.next().trim().toUpperCase();
+
+    if (placa.matches("[A-Z]{3}[0-9]{3}")) {
+        return placa;
+    }
+
+    System.out.println("La placa debe tener 3 letras y 3 numeros. Ejemplo: ABC123");
+
+    return validarPlaca(sc);
+}
 
     public String validarEstado(Scanner sc) {
         String estado = sc.next();
@@ -89,39 +106,84 @@ public class Validaciones {
         return validarEstado(sc);
     }
 
-    public String validarCombustible(Scanner sc) {
-        String combustible = sc.next();
-        if (combustible.equalsIgnoreCase("Gasolina") || combustible.equalsIgnoreCase("Diesel")|| combustible.equalsIgnoreCase("Electrico")) {
-            return combustible;
-        }
+ public String validarCombustible(Scanner sc) {
 
-        System.out.println("Combustible invalido");
-        return validarCombustible(sc);
+    System.out.println("Seleccione el tipo de combustible:");
+    System.out.println("1. Gasolina");
+    System.out.println("2. Diesel");
+    System.out.println("3. Electrico");
+
+    int opcion = validarEntero(sc);
+
+    switch (opcion) {
+
+        case 1:
+            return "Gasolina";
+
+        case 2:
+            return "Diesel";
+
+        case 3:
+            return "Electrico";
+
+        default:
+
+            System.out.println(
+                    "Opcion invalida.");
+
+            return validarCombustible(sc);
     }
 
-    public String validarTransmision(
-            Scanner sc) {
+}
+public String validarTransmision(Scanner sc) {
 
-        String transmision = sc.next();
-        if (transmision.equalsIgnoreCase(
-                "Manual") || transmision.equalsIgnoreCase("Automatica")) {
+    System.out.println("Seleccione la transmision:");
+    System.out.println("1. Manual");
+    System.out.println("2. Automatica");
 
-            return transmision;
-        }
+    int opcion = validarEntero(sc);
 
-        System.out.println("Transmision invalida");
-        return validarTransmision(sc);
+    switch (opcion) {
+
+        case 1:
+            return "Manual";
+
+        case 2:
+            return "Automatica";
+
+        default:
+
+            System.out.println(
+                    "Opcion invalida.");
+
+            return validarTransmision(sc);
     }
+}
 
-    public String validarTraccion(Scanner sc) {
-        String traccion = sc.next();
-        if (traccion.equals("4x2") || traccion.equals("4x4")) {
-            return traccion;
-        }
+ public String validarTraccion(Scanner sc) {
 
-        System.out.println("Traccion invalida");
-        return validarTraccion(sc);
+    System.out.println("Seleccione la traccion:");
+    System.out.println("1. 4x2");
+    System.out.println("2. 4x4");
+
+    int opcion = validarEntero(sc);
+
+    switch (opcion) {
+
+        case 1:
+            return "4x2";
+
+        case 2:
+            return "4x4";
+
+        default:
+
+            System.out.println(
+                    "Opcion invalida.");
+
+            return validarTraccion(sc);
     }
+}
      public String validarIdContrato(Scanner sc) {
 
         String id = sc.next();
